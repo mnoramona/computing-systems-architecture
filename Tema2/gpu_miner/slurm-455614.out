@@ -1,0 +1,10 @@
+WARNING: Environment variable TMPDIR already has value [/export/home/acs/stud/r/ramona.mitran], will not forward new value [/tmp] from parent process environment
+INFO:    fuse: warning: library too old, some operations may not work
+INFO:    underlay of /etc/localtime required more than 50 (76) bind mounts
+INFO:    underlay of /usr/bin/nvidia-smi required more than 50 (387) bind mounts
+make[1]: Entering directory '/export/home/acs/stud/r/ramona.mitran/asc-tema2/assignments/2-cuda_proof_of_work/gpu_miner'
+nvcc -Iinclude -dc  -Xcompiler -Wall -c src/sha256.cu -o src/sha256.o
+nvcc -Iinclude -dc  -Xcompiler -Wall -c src/utils.cu -o src/utils.o
+nvcc -Iinclude -dc  -Xcompiler -Wall -c src/gpu_miner.cu -o src/gpu_miner.o
+nvcc  src/gpu_miner.o src/sha256.o src/utils.o -o gpu_miner -lm
+make[1]: Leaving directory '/export/home/acs/stud/r/ramona.mitran/asc-tema2/assignments/2-cuda_proof_of_work/gpu_miner'
